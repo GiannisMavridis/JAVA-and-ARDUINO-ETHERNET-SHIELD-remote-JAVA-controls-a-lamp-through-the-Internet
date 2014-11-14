@@ -16,6 +16,6 @@ Follow the steps below:
 
 -read the EXPLAIN THE PROJECT and watch the EXPLAIN ABOUT THE NETWORKING STUFF image
 
--read the ARDUINO SKETCH and watch the images
+-read the ARDUINO SKETCH and see the schematics and the images with the arduino
 
 -read the JAVA CODE
