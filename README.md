@@ -9,3 +9,9 @@ Ethernet shield.
 Instead of a lamp we can control a LED . The idea is the same! 
 
 -the other part is the JAVA application that will send commands to the remote Arduino board.
+
+Follow the steps below:
+-read the MUST KNOW STUFF
+-read the EXPLAIN THE PROJECT and watch the EXPLAIN ABOUT THE NETWORKING STUFF image
+-read the ARDUINO SKETCH and watch the images
+-read the JAVA CODE
