@@ -1,3 +1,9 @@
+// I used Eclipse Luna to write,debug and compile the code below
+//You can create a .jar file that contains the application and
+//turn it into an .exe file (download the launch4j tool from the internet and watch a youtube tutorial) 
+//Then you can send this .exe file to any of your friends and tell them to control the lamp in your room!!!
+//Your friend's PC that will run this app must have an appropriate JRE installed . :)
+
 import java.io.*;
 import java.net.*;
 
