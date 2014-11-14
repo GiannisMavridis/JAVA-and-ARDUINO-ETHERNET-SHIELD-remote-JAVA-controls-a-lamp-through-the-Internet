@@ -1,0 +1,41 @@
+Make sure you understand the MUST KNOW STUFF before you continue.
+
+The system we want to build is made up of 3 parts (see the EXPLAIN ABOUT THE NETWORKING STUFF image)
+-the arduino board+the ethernet shield  which is connected to your home router with an ethernet cable.The lamp
+which we will control from the Java app is connected to the arduino through a relay(see the schematics and the images with the
+Arduino)
+-your home router
+-a remote host outside on the Internet that runs the Java app and controls the lamp.
+
+-------What will happen when our project will be ready?----------------
+The remote user will sit infront of its PC.This is the remote host,
+the one that we send our Java app and told him to control our lamp.
+He will run our Java app and a black window will appear with a cursor blinking.
+Then the user can type the 3 allowed commands:
+TURN ON
+TURN OFF
+EXIT
+When the user types TURN ON, the Java app will send the character 'a' to the Arduino.
+When the user types TURN OFF, the Java app will send the character 'b' to the Arduino.
+The Arduino waits for remote commands.When it reads an 'a' ,it understands that a remote user wants 
+to turn on the lamp.So,the Arduino turns on the lamp and sends back a response to our Java app that 
+the lamp is on(when arduino reads an 'a' ,it turns on the lamp and answers back "i turned it on master").
+Something similar happens when arduino reads a 'b'.
+
+Our Java app is connected through a socket connection to our HOME ROUTER.It sends 'a' or 'b' characters to it and then 
+our home router forwards these messages to our Arduino that is located inside our private network(This is what 
+port forwarding actually does).Then the Arduino reads the incoming character , turns on or off the lamp and then it sends a
+response back to our Java app.
+
+The communication model between the Java app and the Arduino is client/server. The java app acts as the client and the arduino 
+as the server.The communication protocol we follow is the following:
+TURN ON -> 'a'
+TURN OFF-> 'b'
+
+It is really important to use the right IP adresses.In the java code we use the router's public IP adress(176.92.44.174 in my network)
+and in the arduino sketch we assign the shield with a static private IP(192.168.10.253 in my network).
+(SEE THE EXPLAIN ABOUT THE NETWORKING STUFF image)
+
+
+
+
