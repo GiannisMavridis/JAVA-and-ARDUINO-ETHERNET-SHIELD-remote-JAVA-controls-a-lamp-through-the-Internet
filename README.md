@@ -4,3 +4,4 @@ The basic 2 parts of the system we want to build are the following:
 -the remote lamp will be connected through a relay to an Arduino Uno board, which will be connected to the Internet via the Arduino 
 Ethernet shield.Instead of a lamp we can control a LED . The idea is the same! 
 -the other part is the JAVA application that will send commands to the remote Arduino board.
+kjk
