@@ -1,0 +1,42 @@
+#include <SPI.h>
+#include <Ethernet.h>
+
+int relay=2;//the relay's trigger pin is connected to arduino 's digital pin 2 
+
+byte mac[]={0xAA,0xAA,0xAA,0xAA,0xAA,0xAA}; //the mac adress for the shield
+byte ip[]={192,168,10,253}; //the ip adress for the shield(it is private).It has to be static
+//otherwise the port forwarding will not work
+EthernetServer server(5000);//the server listens on port 5000 for the JAVA 's commands
+
+void setup(){
+ pinMode(relay,OUTPUT); 
+  Serial.begin(9600);//we will use the serial monitor in order to debug our project
+  Ethernet.begin(mac,ip);
+  delay(10);//give a little time for the shield to initialize itself
+  Serial.println(Ethernet.localIP());//be sure that the ip of the shield is 192.168.10.253
+  server.begin();
+ }
+
+void loop(){
+   EthernetClient client = server.available(); //listen for clients
+   if (client) {
+     //i read the client 's request  
+     //and i write it to the serial monitor
+     //the request will be one letter 
+     //'a'=TURN IT ON 
+     //'b'=TURN IT OFF
+    char ch=client.read();
+    Serial.println(ch);
+    if (ch=='a'){
+     digitalWrite(relay,HIGH);//i turn on the lamp 
+     client.println("I turned it on master"); // i inform the JAVA app that i turned on the light
+    }
+    else if (ch='b'){
+     digitalWrite(relay,LOW);
+     client.println("I turned it off master");
+    }
+   delay(10);
+ }
+}
+      
+
