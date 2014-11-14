@@ -1,5 +1,5 @@
 Before dealing with this project you have to know/understand a bunch of things.
-Just search them on Google and read about them.
+Just search them on Google and read about them.Wikipedia is always there to help you :)
 Then,go on with the project.
 
 -understand what an IP adress is
@@ -7,6 +7,25 @@ what is a public and a private IP? what is a static and a dynamic IP?
 UNDERSTAND that a machine on the Internet (like your home's router that connects you to the Internet)
 can have one OR MORE IP adresses.For example, your home router has one private IP,which is known 
 only to computers that belong to your private network, and one public IP,that is known to any machine on the public Internet.
-(see the image EXPLAIN )
+(see the image EXPLAIN ABOUT THE NETWORKING STUFF )
+
 -understand what a socket is and how two computers on the Internet can communicate using sockets.
+
+-What is going on when your computer wants to send a message over your router to a machine that is located on the public Internet.
+search "Network adress translation"
+
+-What is your router's firewall and how can we allow incoming traffic to pass over the router and reach a designated host inside  
+our private network.The solution to this is called "port forwarding".  
+search "firewall" and "port forwarding"
+
+-Be familiar with the Arduino Ethernet Shield
+
+-Be familiar with the Java Socket class.
+
+Links that helped me a lot are the following:
+http://www.makeuseof.com/tag/what-is-port-forwarding-and-how-can-it-help-me/
+http://www.makeuseof.com/tag/give-your-arduino-project-its-own-mini-webserver-with-an-ethernet-shield/
+http://arduino.cc/en/Main/ArduinoEthernetShield
+http://arduino.cc/en/Guide/ArduinoEthernetShield
+http://arduino.cc/en/Reference/Ethernet
 
