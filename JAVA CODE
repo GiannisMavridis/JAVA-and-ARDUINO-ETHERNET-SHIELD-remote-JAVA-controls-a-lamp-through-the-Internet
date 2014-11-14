@@ -1,0 +1,49 @@
+import java.io.*;
+import java.net.*;
+
+
+public class RemoteLED {
+
+	public static void main(String[] args) {
+		
+	byte[] ipServer={ (byte)176 , (byte)92 , (byte)44, (byte)174 }; //that is your router's public ip
+	try{	
+		Socket s=new Socket(InetAddress.getByAddress(ipServer),5000);
+		OutputStream sout=s.getOutputStream();
+		DataInputStream sin=new DataInputStream(s.getInputStream());
+		DataInputStream keyboard=new DataInputStream(System.in);
+		String command,response ;
+		
+		while(true){
+			command=keyboard.readLine();
+		  	if (command.equals("TURN ON")){
+		  	  sout.write("a".getBytes());	
+		  	  response=sin.readLine();
+		  	  System.out.println(response);
+		  	}
+		  	else if (command.equals("TURN OFF")){
+		  	  sout.write("b".getBytes());
+		  	  response=sin.readLine();
+		  	  System.out.println(response);
+		  	}
+			
+			else if (command.equals("EXIT")){
+				s.close();
+				break;
+			}
+			else{
+			  //the user didn't enter one of the known commands
+				System.out.println("THE KNOWN COMMANDS ARE THE FOLLOWING:");
+				System.out.println("TURN ON");
+				System.out.println("TURN OFF");
+				System.out.println("EXIT");
+			}
+				
+		}	
+	 }catch(IOException e){
+		 System.out.println(e.getMessage());
+	         System.exit(0);
+	 }
+	
+   }
+}
