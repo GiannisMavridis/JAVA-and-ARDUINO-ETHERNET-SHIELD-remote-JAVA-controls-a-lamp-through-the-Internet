@@ -1,0 +1,12 @@
+Before dealing with this project you have to know/understand a bunch of things.
+Just search them on Google and read about them.
+Then,go on with the project.
+
+-understand what an IP adress is
+what is a public and a private IP? what is a static and a dynamic IP?
+UNDERSTAND that a machine on the Internet (like your home's router that connects you to the Internet)
+can have one OR MORE IP adresses.For example, your home router has one private IP,which is known 
+only to computers that belong to your private network, and one public IP,that is known to any machine on the public Internet.
+(see the image EXPLAIN )
+-understand what a socket is and how two computers on the Internet can communicate using sockets.
+
